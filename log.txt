@@ -1,0 +1,858 @@
+
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003552 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003553 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003553 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Erro: Erro de comunicação via soap,  Empty reply from server [https://www1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx]
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003554 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003555 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003555 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003555 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Lote processado. NSU: 000000000003556 | Notas: 0 | Eventos: 0
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003556...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+✅ Tudo atualizado! Fim da fila alcançado.
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+✅ Tudo atualizado! Fim da fila alcançado.
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003558...
+Consultando SEFAZ a partir do NSU: 000000000003559...
+✅ Tudo atualizado! Fim da fila alcançado.
+
+🚀 [21:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [21:00:11] Processamento concluído.
+
+
+🚀 [22:00:02] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [22:00:04] Processamento concluído.
+
+
+🚀 [23:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [23:00:20] Processamento concluído.
+
+
+🚀 [00:00:03] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [00:00:04] Processamento concluído.
+
+
+🚀 [01:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [01:00:17] Processamento concluído.
+
+
+🚀 [02:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [02:00:05] Processamento concluído.
+
+
+🚀 [03:00:02] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [03:00:20] Processamento concluído.
+
+
+🚀 [04:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [04:00:05] Processamento concluído.
+
+
+🚀 [05:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [05:00:10] Processamento concluído.
+
+
+🚀 [06:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [06:00:02] Processamento concluído.
+
+
+🚀 [07:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [07:00:02] Processamento concluído.
+
+
+🚀 [08:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [08:00:10] Processamento concluído.
+
+
+🚀 [09:00:02] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [09:00:02] Processamento concluído.
+
+
+🚀 [10:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [10:00:10] Processamento concluído.
+
+
+🚀 [11:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [11:00:02] Processamento concluído.
+
+
+🚀 [12:00:01] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [12:00:11] Processamento concluído.
+
+
+🚀 [13:00:02] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... ✅ Fim da fila alcançado.
+🏁 [13:00:05] Processamento concluído.
+
+
+🚀 [14:00:02] Iniciando busca na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 2: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 3: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 4: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🔄 Lote 5: Consultando a partir do NSU 000000000003559... Encontrado: 0 notas e 0 eventos.
+🏁 [14:00:12] Processamento concluído.
+
+
+🚀 [20:00:01] Iniciando busca segura...
+✅ Fila limpa no NSU 000000000003562. Encerrando para evitar bloqueio.
+🏁 [20:00:03] Fim do processo.
+
+🚀 [21:00:01] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [21:00:02] Fim do processo.
+
+🚀 [22:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [22:00:02] Fim do processo.
+
+🚀 [23:00:01] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [23:00:02] Fim do processo.
+
+🚀 [00:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [00:00:04] Fim do processo.
+
+🚀 [01:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [01:00:02] Fim do processo.
+
+🚀 [02:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [02:00:02] Fim do processo.
+
+🚀 [03:00:01] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [03:00:02] Fim do processo.
+
+🚀 [04:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [04:00:03] Fim do processo.
+
+🚀 [05:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [05:00:02] Fim do processo.
+
+🚀 [06:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [06:00:02] Fim do processo.
+
+🚀 [07:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [07:00:04] Fim do processo.
+
+🚀 [08:00:01] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [08:00:02] Fim do processo.
+
+🚀 [09:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [09:00:03] Fim do processo.
+
+🚀 [10:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [10:00:03] Fim do processo.
+
+🚀 [11:00:01] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [11:00:02] Fim do processo.
+
+🚀 [12:00:02] Iniciando busca segura...
+⏹️ Sem novos documentos ou bloqueio ativo. Parando...
+🏁 [12:00:02] Fim do processo.
+
+🚀 [19:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [19:00:03] Processamento concluído.
+
+
+🚀 [20:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [20:00:02] Processamento concluído.
+
+
+🚀 [21:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [21:00:04] Processamento concluído.
+
+
+🚀 [22:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [22:00:02] Processamento concluído.
+
+
+🚀 [23:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [23:00:02] Processamento concluído.
+
+
+🚀 [00:00:03] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [00:00:05] Processamento concluído.
+
+
+🚀 [01:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [01:00:01] Processamento concluído.
+
+
+🚀 [02:00:03] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003562... Encontrado: 0 notas e 0 eventos.
+✅ Lote vazio, mas NSU avançou. Encerrando por segurança.
+🏁 [02:00:03] Processamento concluído.
+
+
+🚀 [03:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [03:00:02] Processamento concluído.
+
+
+🚀 [04:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [04:00:03] Processamento concluído.
+
+
+🚀 [05:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [05:00:02] Processamento concluído.
+
+
+🚀 [06:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [06:00:02] Processamento concluído.
+
+
+🚀 [07:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [07:00:04] Processamento concluído.
+
+
+🚀 [08:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [08:00:02] Processamento concluído.
+
+
+🚀 [09:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [09:00:02] Processamento concluído.
+
+
+🚀 [10:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [10:00:02] Processamento concluído.
+
+
+🚀 [11:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [11:00:02] Processamento concluído.
+
+
+🚀 [12:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [12:00:02] Processamento concluído.
+
+
+🚀 [13:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [13:00:03] Processamento concluído.
+
+
+🚀 [14:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [14:00:02] Processamento concluído.
+
+
+🚀 [15:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [15:00:02] Processamento concluído.
+
+
+🚀 [16:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [16:00:02] Processamento concluído.
+
+
+🚀 [17:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [17:00:02] Processamento concluído.
+
+
+🚀 [18:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [18:00:03] Processamento concluído.
+
+
+🚀 [19:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [19:00:02] Processamento concluído.
+
+
+🚀 [20:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [20:00:02] Processamento concluído.
+
+
+🚀 [21:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [21:00:02] Processamento concluído.
+
+
+🚀 [22:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [22:00:02] Processamento concluído.
+
+
+🚀 [23:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [23:00:02] Processamento concluído.
+
+
+🚀 [00:00:04] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [00:00:09] Processamento concluído.
+
+
+🚀 [01:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [01:00:02] Processamento concluído.
+
+
+🚀 [02:00:03] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [02:00:04] Processamento concluído.
+
+
+🚀 [03:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [03:00:03] Processamento concluído.
+
+
+🚀 [04:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [04:00:01] Processamento concluído.
+
+
+🚀 [05:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [05:00:02] Processamento concluído.
+
+
+🚀 [06:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [06:00:01] Processamento concluído.
+
+
+🚀 [07:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [07:00:03] Processamento concluído.
+
+
+🚀 [08:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [08:00:01] Processamento concluído.
+
+
+🚀 [09:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [09:00:02] Processamento concluído.
+
+
+🚀 [10:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [10:00:02] Processamento concluído.
+
+
+🚀 [11:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [11:00:02] Processamento concluído.
+
+
+🚀 [12:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [12:00:03] Processamento concluído.
+
+
+🚀 [13:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [13:00:02] Processamento concluído.
+
+
+🚀 [14:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [14:00:02] Processamento concluído.
+
+
+🚀 [15:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [15:00:02] Processamento concluído.
+
+
+🚀 [16:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [16:00:01] Processamento concluído.
+
+
+🚀 [17:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [17:00:02] Processamento concluído.
+
+
+🚀 [18:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [18:00:03] Processamento concluído.
+
+
+🚀 [19:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [19:00:02] Processamento concluído.
+
+
+🚀 [20:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [20:00:02] Processamento concluído.
+
+
+🚀 [21:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [21:00:02] Processamento concluído.
+
+
+🚀 [22:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [22:00:02] Processamento concluído.
+
+
+🚀 [23:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [23:00:02] Processamento concluído.
+
+
+🚀 [00:00:04] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [00:00:06] Processamento concluído.
+
+
+🚀 [01:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [01:00:02] Processamento concluído.
+
+
+🚀 [02:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [02:00:02] Processamento concluído.
+
+
+🚀 [03:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [03:00:03] Processamento concluído.
+
+
+🚀 [04:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [04:00:02] Processamento concluído.
+
+
+🚀 [05:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [05:00:02] Processamento concluído.
+
+
+🚀 [06:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [06:00:03] Processamento concluído.
+
+
+🚀 [07:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [07:00:02] Processamento concluído.
+
+
+🚀 [08:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [08:00:02] Processamento concluído.
+
+
+🚀 [09:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [09:00:02] Processamento concluído.
+
+
+🚀 [10:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [10:00:01] Processamento concluído.
+
+
+🚀 [11:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [11:00:02] Processamento concluído.
+
+
+🚀 [12:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [12:00:02] Processamento concluído.
+
+
+🚀 [13:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [13:00:01] Processamento concluído.
+
+
+🚀 [14:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [14:00:02] Processamento concluído.
+
+
+🚀 [15:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [15:00:02] Processamento concluído.
+
+
+🚀 [16:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [16:00:03] Processamento concluído.
+
+
+🚀 [17:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [17:00:02] Processamento concluído.
+
+
+🚀 [18:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [18:00:02] Processamento concluído.
+
+
+🚀 [19:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [19:00:02] Processamento concluído.
+
+
+🚀 [20:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [20:00:02] Processamento concluído.
+
+
+🚀 [21:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [21:00:02] Processamento concluído.
+
+
+🚀 [22:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [22:00:01] Processamento concluído.
+
+
+🚀 [23:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [23:00:02] Processamento concluído.
+
+
+🚀 [00:00:03] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... ✅ Fim da fila alcançado. Parando para evitar consumo indevido.
+🏁 [00:00:04] Processamento concluído.
+
+
+🚀 [01:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [01:00:01] Processamento concluído.
+
+
+🚀 [02:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [02:00:03] Processamento concluído.
+
+
+🚀 [03:00:03] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [03:00:04] Processamento concluído.
+
+
+🚀 [04:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [04:00:02] Processamento concluído.
+
+
+🚀 [05:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [05:00:02] Processamento concluído.
+
+
+🚀 [06:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [06:00:02] Processamento concluído.
+
+
+🚀 [07:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [07:00:01] Processamento concluído.
+
+
+🚀 [08:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [08:00:02] Processamento concluído.
+
+
+🚀 [09:00:02] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [09:00:02] Processamento concluído.
+
+
+🚀 [10:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [10:00:02] Processamento concluído.
+
+
+🚀 [11:00:01] Iniciando busca segura na SEFAZ...
+🔄 Lote 1: Consultando a partir do NSU 000000000003563... 🚨 BLOQUEIO ATIVO (656). Abortando execução...
+🏁 [11:00:02] Processamento concluído.
+
+✅ Nada novo no NSU 000000000003563. Encerrando por hoje.
+🚨 BLOQUEIO SEFAZ! IP entrou em quarentena local por 75 minutos.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+✅ Sem novidades no NSU 000000000003563.
+💤 [REGRAS] Nada novo na última vez. Aguardando intervalo de 2h para não irritar a SEFAZ.
+💤 [REGRAS] Nada novo na última vez. Aguardando intervalo de 2h para não irritar a SEFAZ.
+💤 [REGRAS] Nada novo na última vez. Aguardando intervalo de 2h para não irritar a SEFAZ.
+💤 [REGRAS] Nada novo na última vez. Aguardando intervalo de 2h para não irritar a SEFAZ.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 BLOQUEIO SEFAZ 656.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+🚨 [QUARENTENA] IP bloqueado anteriormente. Aguardando 90min de silêncio total.
+💤 [REGRAS] Respeitando o intervalo para evitar bloqueio. Próxima consulta em breve.
+💤 [REGRAS] Respeitando o intervalo para evitar bloqueio. Próxima consulta em breve.
+🚨 Bloqueio detectado. Parando.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 308 min. Não vamos incomodar a SEFAZ.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 128 min. Não vamos incomodar a SEFAZ.
+🚨 Bloqueio SEFAZ detectado.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 180 min. Não vamos incomodar a SEFAZ.
+🚨 Bloqueio SEFAZ detectado.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 180 min. Não vamos incomodar a SEFAZ.
+🚨 Bloqueio SEFAZ detectado.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 180 min. Não vamos incomodar a SEFAZ.
+🚨 Bloqueio SEFAZ detectado.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 180 min. Não vamos incomodar a SEFAZ.
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🎉 Processado com sucesso!
+🚨 Bloqueio SEFAZ detectado.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 181 min. Não vamos incomodar a SEFAZ.
+⚠️ [BLOQUEIO ATIVO] Em quarentena por mais 1 min. Não vamos incomodar a SEFAZ.
+🔍 Consultando SEFAZ para o NSU específico: 3574...
+🎉 Documento 3574 encontrado!
+✅ Ponteiro atualizado para: 000000000003574
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Consultando SEFAZ para o NSU específico: 3577...
+🔍 Tentando NSU: 3577...

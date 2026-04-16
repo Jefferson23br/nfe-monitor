@@ -1,0 +1,4 @@
+    // ... (Se chegar aqui, processa as notas normalmente)
+    // ...
+    
+} catch (\Exception $e) { echo "Erro: " . $e->getMessage(); }
