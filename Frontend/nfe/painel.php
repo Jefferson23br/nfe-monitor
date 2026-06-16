@@ -90,11 +90,16 @@ try {
     $licencaInfo = empresa_format_validade_licenca($empresaRow);
     $quotaLogs = empresa_quota_logs($empresaRow, $totalLogs);
     $consultaPermitida = empresa_pode_consultar($empresaRow, $totalLogs);
+    $limiteManualSefaz = monitor_limite_manual_sefaz();
 
     if (isset($_POST['atualizar'])) {
         if (!$consultaPermitida['ok']) {
             $mensagem = '<div class="dash-alert dash-alert-danger dash-alert--compact" role="alert">'
                 . htmlspecialchars(painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInfo, $quotaLogs))
+                . '</div>';
+        } elseif (!$limiteManualSefaz['ok']) {
+            $mensagem = '<div class="dash-alert dash-alert-danger dash-alert--compact" role="alert">'
+                . htmlspecialchars($limiteManualSefaz['mensagem'] ?? 'Consulta manual temporariamente indisponível.')
                 . '</div>';
         } else {
             set_time_limit(180);
@@ -107,6 +112,7 @@ try {
                 $totalLogs = empresa_contar_logs($empresaId);
                 $quotaLogs = empresa_quota_logs($empresaRow, $totalLogs);
                 $consultaPermitida = empresa_pode_consultar($empresaRow, $totalLogs);
+                $limiteManualSefaz = monitor_limite_manual_sefaz();
             } catch (Throwable $e) {
                 $mensagem = '<div class="dash-alert dash-alert-danger"><strong>Falha na consulta</strong> '
                     . htmlspecialchars($e->getMessage()) . '</div>';
@@ -154,6 +160,7 @@ try {
     $totalLogs = empresa_contar_logs($empresaId);
     $quotaLogs = empresa_quota_logs($empresaRow, $totalLogs);
     $consultaPermitida = empresa_pode_consultar($empresaRow, $totalLogs);
+    $limiteManualSefaz = monitor_limite_manual_sefaz();
 } catch (PDOException $e) {
     die('Erro ao conectar: ' . htmlspecialchars($e->getMessage()));
 } catch (Throwable $e) {
@@ -164,6 +171,12 @@ $cnpjFmt = painel_format_cnpj((string) $user['empresa_cnpj']);
 $iniciais = painel_iniciais((string) $user['nome']);
 $ultimaConsultaFmt = painel_format_ultima_consulta($ultimaConsultaAt !== false ? (string) $ultimaConsultaAt : null);
 $podeConsultar = (bool) ($consultaPermitida['ok'] ?? false);
+$podeConsultarManual = $podeConsultar && (bool) ($limiteManualSefaz['ok'] ?? false);
+$avisoConsultaManual = $limiteManualSefaz['mensagem']
+    ?? 'Consulta manual temporariamente indisponível.';
+$avisoConsultaBotao = !$podeConsultar
+    ? $avisoConsulta
+    : (!$podeConsultarManual ? $avisoConsultaManual : '');
 $licencaBadge = painel_quota_badge_class($licencaInfo['estado']);
 $logsBadge = painel_quota_badge_class($quotaLogs['estado']);
 $logsKpiSub = $quotaLogs['limite'] === null
@@ -234,11 +247,14 @@ $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInf
                 <?= $podeConsultar ? 'Robô ativo · consNSU +1 a cada 3h' : 'Consultas suspensas' ?>
             </span>
             <span class="dash-pill">Última consulta: <?= htmlspecialchars($ultimaConsultaFmt) ?></span>
+            <span class="dash-pill" title="Todas as empresas — limite SEFAZ para consulta manual">
+                Consultas/hora: <?= (int) $limiteManualSefaz['contagem'] ?>/<?= (int) $limiteManualSefaz['limite'] ?>
+            </span>
         </div>
         <div class="dash-actions">
             <form method="post" class="m-0">
                 <button type="submit" name="atualizar" class="dash-btn dash-btn-primary"
-                        <?= $podeConsultar ? '' : 'disabled title="' . htmlspecialchars($avisoConsulta) . '"' ?>>
+                        <?= $podeConsultarManual ? '' : 'disabled title="' . htmlspecialchars($avisoConsultaBotao) . '"' ?>>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
                     Consultar NSU agora
                 </button>
@@ -256,6 +272,10 @@ $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInf
     <?php if (!$podeConsultar): ?>
     <div class="dash-notice" role="status">
         <?= htmlspecialchars($avisoConsulta) ?>
+    </div>
+    <?php elseif (!$podeConsultarManual): ?>
+    <div class="dash-notice" role="status">
+        <?= htmlspecialchars($avisoConsultaManual) ?>
     </div>
     <?php endif; ?>
 
