@@ -229,6 +229,102 @@ function monitor_cli_tem_flag(string $flag): bool
 
 const MONITOR_INTERVALO_HORAS = 3;
 
+/** SEFAZ bloqueia após 20 consultas em 60 min; manual trava aos 15 (margem para o cron). */
+const MONITOR_SEFAZ_JANELA_MINUTOS = 60;
+const MONITOR_SEFAZ_LIMITE_MANUAL = 15;
+
+function monitor_contar_consultas_sefaz_periodo(int $minutos = MONITOR_SEFAZ_JANELA_MINUTOS): int
+{
+    monitor_garantir_schema();
+    $minutos = max(1, $minutos);
+    $stmt = db()->prepare(
+        "SELECT COUNT(*) FROM registros_robot
+         WHERE UPPER(tipo) = 'CONSULTA'
+         AND criado_em >= NOW() - INTERVAL '1 minute' * :min"
+    );
+    $stmt->bindValue(':min', $minutos, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return (int) $stmt->fetchColumn();
+}
+
+/** Minutos até a consulta manual ser liberada (quando a contagem global cair abaixo do limite). */
+function monitor_minutos_ate_liberar_consulta_manual(int $janelaMinutos = MONITOR_SEFAZ_JANELA_MINUTOS): int
+{
+    monitor_garantir_schema();
+    $limite = MONITOR_SEFAZ_LIMITE_MANUAL;
+    $contagem = monitor_contar_consultas_sefaz_periodo($janelaMinutos);
+    if ($contagem < $limite) {
+        return 0;
+    }
+
+    $precisaSair = $contagem - $limite + 1;
+    $offset = max(0, $precisaSair - 1);
+    $janela = (int) $janelaMinutos;
+    $stmt = db()->query(
+        "SELECT criado_em FROM registros_robot
+         WHERE UPPER(tipo) = 'CONSULTA'
+         AND criado_em >= NOW() - INTERVAL '1 minute' * {$janela}
+         ORDER BY criado_em ASC
+         LIMIT 1 OFFSET {$offset}"
+    );
+    $criadoEm = $stmt->fetchColumn();
+    if ($criadoEm === false) {
+        return $janelaMinutos;
+    }
+
+    $ts = strtotime((string) $criadoEm);
+    if ($ts === false) {
+        return $janelaMinutos;
+    }
+
+    return max(0, (int) ceil(($ts + $janelaMinutos * 60 - time()) / 60));
+}
+
+/**
+ * Limite global de consultas manuais (todas as empresas somadas na janela SEFAZ).
+ *
+ * @return array{
+ *   ok: bool,
+ *   contagem: int,
+ *   limite: int,
+ *   minutos_restantes: int,
+ *   mensagem?: string
+ * }
+ */
+function monitor_limite_manual_sefaz(): array
+{
+    $limite = MONITOR_SEFAZ_LIMITE_MANUAL;
+    $janela = MONITOR_SEFAZ_JANELA_MINUTOS;
+    $contagem = monitor_contar_consultas_sefaz_periodo($janela);
+
+    if ($contagem < $limite) {
+        return [
+            'ok' => true,
+            'contagem' => $contagem,
+            'limite' => $limite,
+            'minutos_restantes' => 0,
+        ];
+    }
+
+    $minutosRestantes = monitor_minutos_ate_liberar_consulta_manual($janela);
+
+    return [
+        'ok' => false,
+        'contagem' => $contagem,
+        'limite' => $limite,
+        'minutos_restantes' => $minutosRestantes,
+        'mensagem' => sprintf(
+            'Limite de consultas manuais atingido (%d/%d em %d min, todas as empresas). '
+            . 'A SEFAZ bloqueia após 20 consultas em 1 hora — aguarde ~%d min ou deixe o robô automático.',
+            $contagem,
+            $limite,
+            $janela,
+            $minutosRestantes
+        ),
+    ];
+}
+
 function monitor_garantir_timezone(): void
 {
     static $ok = false;
@@ -401,6 +497,13 @@ function monitor_executar(int $empresaId, bool $force = false): string
     $bloqueio = empresa_pode_consultar($empresa);
     if (!$bloqueio['ok']) {
         return 'ERRO: ' . ($bloqueio['mensagem'] ?? 'Consulta bloqueada.');
+    }
+
+    if ($force) {
+        $limiteManual = monitor_limite_manual_sefaz();
+        if (!$limiteManual['ok']) {
+            return 'ERRO: ' . ($limiteManual['mensagem'] ?? 'Consulta manual bloqueada pelo limite SEFAZ.');
+        }
     }
 
     $php = monitor_php_cli();
