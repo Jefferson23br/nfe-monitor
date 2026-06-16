@@ -1,0 +1,15 @@
+<?php
+
+/** Copie para database.local.php e ajuste. Não commite senhas reais. */
+return [
+    'host' => 'localhost',
+    'dbname' => 'nfe_monitor',
+    'user' => 'postgres',
+    'pass' => 'SUA_SENHA_DB',
+    /**
+     * Chave para criptografar senhas dos certificados (.pfx) no banco.
+     * Mínimo 32 caracteres aleatórios. Gere com:
+     * php -r "echo bin2hex(random_bytes(32)), PHP_EOL;"
+     */
+    'app_key' => 'COLE_AQUI_CHAVE_ALEATORIA_DE_64_CARACTERES_OU_MAIS',
+];

@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Copie para app.config.php na VPS e ajuste conforme o Nginx.
+ *
+ * Cenário A — root = /root/nfe-monitor/Frontend (recomendado)
+ *   base_path => ''
+ *   dashboard_path => 'nfe/index.php'   OU 'index.php' se usar rewrite
+ *
+ * Cenário B — root = Frontend/nfe com rewrite (ver deploy/nginx-frontend.conf)
+ */
+
+return [
+    'base_path' => '',
+    'dashboard_path' => 'index.php',
+    /** Produção: false — link de recuperação de senha só por e-mail */
+    'dev_mode' => false,
+    /** Remetente do e-mail de recuperação de senha (requer sendmail/postfix na VPS) */
+    'mail_from' => 'noreply@suaempresa.com.br',
+    /**
+     * Link WhatsApp de suporte (painel e login).
+     * Configure apenas em app.config.php na VPS — não commite o número real.
+     */
+    'suporte_whatsapp_url' => 'https://wa.me/5500000000000?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20na%20Plataforma%20NFe%20Monitor',
+];

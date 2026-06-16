@@ -1,0 +1,68 @@
+# =============================================================================
+# SEGREDOS E CONFIGURAÇÃO LOCAL — NUNCA PUBLICAR
+# =============================================================================
+.env
+.env.*
+!.env.example
+config.local.php
+database.local.php
+app.config.php
+deploy.local.ps1
+deploy/deploy.local.ps1
+deploy/*.local.*
+deploy/*.local.conf
+scripts/purge-secrets.local.txt
+scripts/deploy.local.ps1
+
+# Credenciais SSH / deploy (IPs e usuários reais)
+scripts/deploy.local.ps1
+
+# Chaves e tokens diversos
+credentials.json
+secrets/
+*.secret
+*.secrets
+
+# =============================================================================
+# CERTIFICADOS DIGITAIS A1/A3
+# =============================================================================
+certs/*.pfx
+certs/*.p12
+certs/*.pem
+certs/*.key
+*.pfx
+*.p12
+!certs/.gitkeep
+
+# =============================================================================
+# ESTADO E LOGS DE EXECUÇÃO
+# =============================================================================
+log.txt
+*.log
+status_robot.json
+status_robot_empresa_*.json
+var/status/
+trava_bloqueio.txt
+monitor.php.save
+*.save
+*.bak
+
+# =============================================================================
+# PASTAS QUE NÃO DEVEM IR PARA O GIT
+# =============================================================================
+docs/historico-conversas/
+nfe-monitor/
+
+# =============================================================================
+# SISTEMA OPERACIONAL E IDEs
+# =============================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# vendor/ — descomente se preferir instalar via composer no clone
+# /vendor/

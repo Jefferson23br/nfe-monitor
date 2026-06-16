@@ -1,0 +1,95 @@
+LICENÇA DE SOFTWARE PROPRIETÁRIA
+NFe Monitor — Sistema de Monitoramento de Notas Fiscais Eletrônicas
+
+Copyright © 2024–2026 Jefferson Luis de Lima. Todos os direitos reservados.
+
+================================================================================
+AVISO LEGAL
+================================================================================
+
+Este software é protegido pelas leis brasileiras de propriedade intelectual,
+incluindo, mas não se limitando a:
+
+  • Lei nº 9.609/98 — Lei de Proteção de Programas de Computador
+  • Lei nº 9.610/98 — Lei de Direitos Autorais
+  • Lei nº 9.279/96 — Lei de Propriedade Industrial (quando aplicável)
+  • Código Civil Brasileiro (arts. 1.228 a 1.325 — direitos autorais)
+
+A disponibilização deste código em repositório público tem finalidade exclusiva
+de DEMONSTRAÇÃO TÉCNICA (portfólio profissional). Isso NÃO constitui concessão
+de licença de uso, cópia, distribuição ou comercialização.
+
+================================================================================
+CONCESSÃO LIMITADA
+================================================================================
+
+O titular concede ao visitante do repositório apenas o direito de:
+
+  1. Visualizar o código-fonte para fins de avaliação técnica;
+  2. Executar o software em ambiente local próprio, exclusivamente para estudo
+     pessoal e não comercial, mediante configuração de credenciais próprias.
+
+Qualquer outro uso requer autorização prévia e por escrito do titular.
+
+================================================================================
+PROIBIÇÕES EXPRESSAS
+================================================================================
+
+É EXPRESSAMENTE PROIBIDO, sem autorização escrita do titular:
+
+  ✗ Copiar, reproduzir ou redistribuir o código, no todo ou em parte;
+  ✗ Comercializar, sublicenciar, alugar ou oferecer como serviço (SaaS);
+  ✗ Criar obras derivadas, forks públicos ou produtos concorrentes baseados
+    neste código;
+  ✗ Remover, alterar ou ocultar avisos de copyright e esta licença;
+  ✗ Utilizar o software em produção para terceiros sem contrato de licença;
+  ✗ Publicar trechos substanciais em outros repositórios ou plataformas;
+  ✗ Realizar engenharia reversa com finalidade de replicação comercial;
+  ✗ Utilizar o nome, marca ou identidade do autor para endosso sem permissão.
+
+================================================================================
+PROPRIEDADE INTELECTUAL
+================================================================================
+
+Todo o código-fonte, documentação, scripts, estrutura de banco de dados,
+interfaces e demais materiais incluídos neste repositório são de titularidade
+exclusiva de Jefferson Luis de Lima, salvo componentes de terceiros licenciados
+separadamente (ex.: NFePHP, Bootstrap), que permanecem sob suas respectivas
+licenças.
+
+================================================================================
+ISENÇÃO DE GARANTIAS
+================================================================================
+
+O SOFTWARE É FORNECIDO "NO ESTADO EM QUE SE ENCONTRA" (AS IS), SEM GARANTIAS
+DE QUALQUER NATUREZA, EXPRESSAS OU IMPLÍCITAS, INCLUINDO GARANTIAS DE
+COMERCIALIZAÇÃO, ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO OU NÃO VIOLAÇÃO.
+
+O titular não se responsabiliza por danos diretos, indiretos, incidentais ou
+consequenciais decorrentes do uso ou da impossibilidade de uso deste software,
+incluindo perdas fiscais, multas da SEFAZ ou indisponibilidade de serviços.
+
+================================================================================
+VIOLAÇÃO E PENALIDADES
+================================================================================
+
+O uso não autorizado deste software constitui violação de direitos autorais e
+pode resultar em:
+
+  • Notificação extrajudicial de cessação de uso;
+  • Remoção de conteúdo em plataformas (DMCA e equivalentes brasileiros);
+  • Ação judicial por danos materiais e morais;
+  • Medidas cautelares para bloqueio de distribuição não autorizada.
+
+================================================================================
+LICENCIAMENTO COMERCIAL
+================================================================================
+
+Para solicitar licença comercial, parceria, white-label ou autorização de uso
+em produção para terceiros:
+
+  GitHub: https://github.com/Jefferson23br
+
+================================================================================
+
+Última atualização: junho de 2026

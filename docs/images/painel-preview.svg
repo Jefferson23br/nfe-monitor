@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" fill="#f4f6fb"/>
+  <rect x="0" y="0" width="1200" height="72" fill="#fff" stroke="#e8ecf4"/>
+  <rect x="32" y="16" width="40" height="40" rx="11" fill="url(#dash-logo)"/>
+  <defs>
+    <linearGradient id="dash-logo" x1="32" y1="16" x2="72" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e3a5f"/>
+      <stop offset="0.55" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <text x="52" y="41" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="9" font-weight="700">NF-e</text>
+  <text x="88" y="34" fill="#0f172a" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Empresa Exemplo LTDA</text>
+  <text x="88" y="54" fill="#64748b" font-family="system-ui,sans-serif" font-size="12">CNPJ 00.000.000/0001-00</text>
+  <rect x="470" y="18" width="130" height="36" rx="18" fill="#fff" stroke="#e8ecf4"/>
+  <text x="535" y="41" text-anchor="middle" fill="#059669" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Licença válida</text>
+  <rect x="620" y="18" width="110" height="36" rx="18" fill="#fff" stroke="#e8ecf4"/>
+  <text x="675" y="41" text-anchor="middle" fill="#2563eb" font-family="system-ui,sans-serif" font-size="12" font-weight="600">196 / 500 logs</text>
+  <rect x="32" y="96" width="1136" height="88" rx="14" fill="#fff" stroke="#e8ecf4"/>
+  <rect x="56" y="120" width="150" height="40" rx="10" fill="#2563eb"/>
+  <text x="131" y="145" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Consultar NSU</text>
+  <rect x="224" y="120" width="150" height="40" rx="10" fill="#fff" stroke="#e8ecf4"/>
+  <text x="299" y="145" text-anchor="middle" fill="#0f172a" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Baixar DANFE</text>
+  <rect x="32" y="208" width="268" height="110" rx="14" fill="#fff" stroke="#e8ecf4"/>
+  <rect x="324" y="208" width="268" height="110" rx="14" fill="#fff" stroke="#e8ecf4"/>
+  <rect x="616" y="208" width="268" height="110" rx="14" fill="#fff" stroke="#e8ecf4"/>
+  <rect x="908" y="208" width="260" height="110" rx="14" fill="#fff" stroke="#e8ecf4"/>
+  <text x="56" y="244" fill="#64748b" font-family="system-ui,sans-serif" font-size="12">Último NSU</text>
+  <text x="56" y="282" fill="#0f172a" font-family="system-ui,sans-serif" font-size="28" font-weight="700">0000003619</text>
+  <text x="348" y="244" fill="#64748b" font-family="system-ui,sans-serif" font-size="12">Total de notas</text>
+  <text x="348" y="282" fill="#0f172a" font-family="system-ui,sans-serif" font-size="28" font-weight="700">28</text>
+  <rect x="32" y="342" width="1136" height="330" rx="14" fill="#fff" stroke="#e8ecf4"/>
+  <text x="56" y="378" fill="#0f172a" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Notas fiscais recebidas</text>
+  <rect x="56" y="398" width="1088" height="36" rx="8" fill="#f8fafc"/>
+  <text x="72" y="421" fill="#64748b" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Emissão</text>
+  <text x="220" y="421" fill="#64748b" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Emitente</text>
+  <text x="520" y="421" fill="#64748b" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Valor</text>
+  <text x="700" y="421" fill="#64748b" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Chave</text>
+  <text x="72" y="462" fill="#0f172a" font-family="system-ui,sans-serif" font-size="13">15/06/2026</text>
+  <text x="220" y="462" fill="#0f172a" font-family="system-ui,sans-serif" font-size="13">Fornecedor ABC Ltda</text>
+  <text x="520" y="462" fill="#0f172a" font-family="system-ui,sans-serif" font-size="13">R$ 1.250,00</text>
+  <text x="700" y="462" fill="#64748b" font-family="monospace" font-size="12">3526...7890</text>
+  <text x="72" y="502" fill="#0f172a" font-family="system-ui,sans-serif" font-size="13">14/06/2026</text>
+  <text x="220" y="502" fill="#0f172a" font-family="system-ui,sans-serif" font-size="13">Distribuidora XYZ SA</text>
+  <text x="520" y="502" fill="#0f172a" font-family="system-ui,sans-serif" font-size="13">R$ 890,50</text>
+  <text x="700" y="502" fill="#64748b" font-family="monospace" font-size="12">3526...4521</text>
+</svg>
