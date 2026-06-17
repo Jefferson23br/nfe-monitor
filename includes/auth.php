@@ -315,7 +315,7 @@ function auth_suporte_url(): string
         return $env;
     }
 
-    return 'https://wa.me/5500000000000?text=' . rawurlencode('Olá, preciso de ajuda na Plataforma NFe Monitor');
+    return 'https://wa.me/5535984047078?text=' . rawurlencode('Olá, preciso de ajuda na Plataforma NFe Monitor');
 }
 
 function auth_logout_url(): string
