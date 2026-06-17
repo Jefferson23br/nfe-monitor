@@ -21,5 +21,5 @@ return [
      * Link WhatsApp de suporte (painel e login).
      * Configure apenas em app.config.php na VPS — não commite o número real.
      */
-    'suporte_whatsapp_url' => 'https://wa.me/5500000000000?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20na%20Plataforma%20NFe%20Monitor',
+    'suporte_whatsapp_url' => 'https://wa.me/5535984047078?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20na%20Plataforma%20NFe%20Monitor',
 ];
