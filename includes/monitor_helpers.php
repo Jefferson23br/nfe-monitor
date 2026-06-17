@@ -37,6 +37,82 @@ function monitor_empresa_por_id(int $empresaId): array
     return $row;
 }
 
+function monitor_ciclo_pid_file(int $empresaId): string
+{
+    monitor_garantir_dir_status();
+
+    return monitor_status_dir() . '/ciclo_empresa_' . $empresaId . '.pid';
+}
+
+function monitor_robo_em_execucao(int $empresaId): bool
+{
+    $path = monitor_ciclo_pid_file($empresaId);
+    if (!is_file($path)) {
+        return false;
+    }
+    $pid = (int) trim((string) file_get_contents($path));
+    if ($pid <= 0) {
+        return false;
+    }
+    if (function_exists('posix_kill')) {
+        return @posix_kill($pid, 0);
+    }
+
+    return is_dir("/proc/{$pid}");
+}
+
+function monitor_remover_pid_ciclo(int $empresaId): void
+{
+    $path = monitor_ciclo_pid_file($empresaId);
+    if (is_file($path)) {
+        @unlink($path);
+    }
+}
+
+function monitor_registrar_pid_ciclo(int $empresaId): void
+{
+    monitor_garantir_dir_status();
+    file_put_contents(monitor_ciclo_pid_file($empresaId), (string) getmypid());
+    register_shutdown_function(static function () use ($empresaId): void {
+        monitor_remover_pid_ciclo($empresaId);
+    });
+}
+
+/** Se o robô contínuo deve ser iniciado (watchdog / cron). */
+function monitor_deve_iniciar_ciclo(int $empresaId, bool $forcar = false): bool
+{
+    if (monitor_robo_em_execucao($empresaId)) {
+        return false;
+    }
+
+    try {
+        $empresa = monitor_empresa_por_id($empresaId);
+    } catch (Throwable) {
+        return false;
+    }
+
+    $bloqueio = empresa_pode_consultar($empresa);
+    if (!$bloqueio['ok']) {
+        return false;
+    }
+
+    if ($forcar) {
+        return true;
+    }
+
+    $status = monitor_ler_status($empresaId);
+    if ($status === null) {
+        return true;
+    }
+
+    $cStat = (string) ($status['cStat'] ?? '');
+    if ($cStat === '589' || $cStat === '656') {
+        return false;
+    }
+
+    return true;
+}
+
 /** Config fiscal + certificado da empresa (base em config.php) */
 function monitor_config_fiscal(int $empresaId): array
 {
@@ -620,6 +696,18 @@ function monitor_executar_consulta_consnsu(
  */
 function monitor_ciclo_consultas_continuo(int $empresaId, \NFePHP\NFe\Tools $tools, PDO $pdo, array $empresa): void
 {
+    monitor_registrar_pid_ciclo($empresaId);
+    set_time_limit(0);
+
+    $ultimoNsu = monitor_nsu_pad(monitor_config_valor($empresaId, 'ultimo_nsu') ?: '0');
+    monitor_registrar_log(
+        $empresaId,
+        'CICLO',
+        'Robô contínuo iniciado — consulta a cada ' . MONITOR_INTERVALO_ENTRE_CONSULTAS_SEG
+        . 's até [589] (próximo NSU ' . monitor_nsu_pad((int) $ultimoNsu + 1) . ').',
+        $ultimoNsu
+    );
+
     echo '🔄 Modo contínuo: máx ' . MONITOR_SEFAZ_LIMITE_CONSULTAS . ' consultas/hora, '
         . 'intervalo ' . MONITOR_INTERVALO_ENTRE_CONSULTAS_SEG . " s, para apenas em [589].\n";
 
@@ -634,6 +722,12 @@ function monitor_ciclo_consultas_continuo(int $empresaId, \NFePHP\NFe\Tools $too
         echo $resultado['mensagem_saida'];
 
         if ($resultado['encerrar']) {
+            monitor_registrar_log(
+                $empresaId,
+                'CICLO',
+                'Robô encerrado: [' . $resultado['cStat'] . '] ' . $resultado['xMotivo'],
+                $resultado['ultimo_nsu']
+            );
             return;
         }
 
