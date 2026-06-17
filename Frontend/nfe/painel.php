@@ -90,7 +90,7 @@ try {
     $licencaInfo = empresa_format_validade_licenca($empresaRow);
     $quotaLogs = empresa_quota_logs($empresaRow, $totalLogs);
     $consultaPermitida = empresa_pode_consultar($empresaRow, $totalLogs);
-    $limiteManualSefaz = monitor_limite_manual_sefaz();
+    $limiteManualSefaz = monitor_limite_sefaz_consultas($empresaId);
 
     if (isset($_POST['atualizar'])) {
         if (!$consultaPermitida['ok']) {
@@ -112,7 +112,7 @@ try {
                 $totalLogs = empresa_contar_logs($empresaId);
                 $quotaLogs = empresa_quota_logs($empresaRow, $totalLogs);
                 $consultaPermitida = empresa_pode_consultar($empresaRow, $totalLogs);
-                $limiteManualSefaz = monitor_limite_manual_sefaz();
+                $limiteManualSefaz = monitor_limite_sefaz_consultas($empresaId);
             } catch (Throwable $e) {
                 $mensagem = '<div class="dash-alert dash-alert-danger"><strong>Falha na consulta</strong> '
                     . htmlspecialchars($e->getMessage()) . '</div>';
@@ -160,7 +160,7 @@ try {
     $totalLogs = empresa_contar_logs($empresaId);
     $quotaLogs = empresa_quota_logs($empresaRow, $totalLogs);
     $consultaPermitida = empresa_pode_consultar($empresaRow, $totalLogs);
-    $limiteManualSefaz = monitor_limite_manual_sefaz();
+    $limiteManualSefaz = monitor_limite_sefaz_consultas($empresaId);
 } catch (PDOException $e) {
     die('Erro ao conectar: ' . htmlspecialchars($e->getMessage()));
 } catch (Throwable $e) {
@@ -244,10 +244,10 @@ $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInf
         <div class="dash-toolbar-meta">
             <span class="dash-pill">
                 <span class="dash-pill-dot" aria-hidden="true"></span>
-                <?= $podeConsultar ? 'Robô ativo · consNSU +1 a cada 3h' : 'Consultas suspensas' ?>
+                <?= $podeConsultar ? 'Robô ativo · consNSU contínuo a cada 3h (até 18/h)' : 'Consultas suspensas' ?>
             </span>
             <span class="dash-pill">Última consulta: <?= htmlspecialchars($ultimaConsultaFmt) ?></span>
-            <span class="dash-pill" title="Todas as empresas — limite SEFAZ para consulta manual">
+            <span class="dash-pill" title="Limite SEFAZ desta empresa (certificado próprio)">
                 Consultas/hora: <?= (int) $limiteManualSefaz['contagem'] ?>/<?= (int) $limiteManualSefaz['limite'] ?>
             </span>
         </div>
