@@ -26,6 +26,7 @@ function painel_log_badge_class(string $tipo): string
 {
     return match (strtoupper($tipo)) {
         'CONSULTA' => 'dash-badge--consulta',
+        'CICLO' => 'dash-badge--sync',
         'SYNC' => 'dash-badge--sync',
         'AJUSTE' => 'dash-badge--ajuste',
         default => 'dash-badge--default',
