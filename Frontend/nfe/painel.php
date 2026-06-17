@@ -81,6 +81,45 @@ function painel_aviso_consulta_bloqueada(array $bloqueio, array $licencaInfo, ar
     };
 }
 
+function painel_parse_data_filtro(?string $raw): ?string
+{
+    if ($raw === null) {
+        return null;
+    }
+    $raw = trim($raw);
+    if ($raw === '') {
+        return null;
+    }
+    $dt = DateTimeImmutable::createFromFormat('Y-m-d', $raw);
+    if (!$dt || $dt->format('Y-m-d') !== $raw) {
+        return null;
+    }
+
+    return $raw;
+}
+
+/** @return array{0: string, 1: array<string, mixed>} */
+function painel_montar_filtro_notas(int $empresaId, ?string $dataInicio, ?string $dataFim, string $fornecedor): array
+{
+    $where = ['empresa_id = :e'];
+    $params = ['e' => $empresaId];
+
+    if ($dataInicio !== null) {
+        $where[] = 'data_emissao >= :data_inicio';
+        $params['data_inicio'] = $dataInicio . ' 00:00:00';
+    }
+    if ($dataFim !== null) {
+        $where[] = 'data_emissao <= :data_fim';
+        $params['data_fim'] = $dataFim . ' 23:59:59';
+    }
+    if ($fornecedor !== '') {
+        $where[] = 'nome_emitente ILIKE :fornecedor ESCAPE \'\\\'';
+        $params['fornecedor'] = '%' . str_replace(['\\', '%', '_'], ['\\\\', '\\%', '\\_'], $fornecedor) . '%';
+    }
+
+    return [implode(' AND ', $where), $params];
+}
+
 try {
     empresa_garantir_schema();
     $pdo = db();
@@ -150,10 +189,30 @@ try {
     $stmt->execute(['e' => $empresaId]);
     $totalNotas = (int) $stmt->fetchColumn();
 
-    $stmt = $pdo->prepare(
-        'SELECT * FROM notas_fiscais WHERE empresa_id = :e ORDER BY data_emissao DESC NULLS LAST LIMIT 50'
+    $filtroDataInicioInput = trim((string) ($_GET['data_inicio'] ?? ''));
+    $filtroDataFimInput = trim((string) ($_GET['data_fim'] ?? ''));
+    $filtroFornecedorInput = trim((string) ($_GET['fornecedor'] ?? ''));
+    $filtroDataInicio = painel_parse_data_filtro($filtroDataInicioInput !== '' ? $filtroDataInicioInput : null);
+    $filtroDataFim = painel_parse_data_filtro($filtroDataFimInput !== '' ? $filtroDataFimInput : null);
+    $filtroAtivo = $filtroDataInicio !== null
+        || $filtroDataFim !== null
+        || $filtroFornecedorInput !== '';
+
+    [$whereNotas, $paramsNotas] = painel_montar_filtro_notas(
+        $empresaId,
+        $filtroDataInicio,
+        $filtroDataFim,
+        $filtroFornecedorInput
     );
-    $stmt->execute(['e' => $empresaId]);
+
+    $stmt = $pdo->prepare("SELECT count(*) FROM notas_fiscais WHERE {$whereNotas}");
+    $stmt->execute($paramsNotas);
+    $totalNotasFiltradas = (int) $stmt->fetchColumn();
+
+    $stmt = $pdo->prepare(
+        "SELECT * FROM notas_fiscais WHERE {$whereNotas} ORDER BY data_emissao DESC NULLS LAST LIMIT 50"
+    );
+    $stmt->execute($paramsNotas);
     $notas = $stmt->fetchAll();
 
     $logs = monitor_logs_listar($empresaId, 100);
@@ -183,6 +242,11 @@ $logsKpiSub = $quotaLogs['limite'] === null
     ? 'Limite indeterminado · histórico de consultas NSU'
     : 'Limite total de ' . number_format($quotaLogs['limite'], 0, ',', '.') . ' consultas NSU';
 $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInfo, $quotaLogs);
+$dashboardCssPath = __DIR__ . '/assets/css/dashboard.css';
+$dashboardCssVer = url_path('assets/css/dashboard.css');
+if (is_file($dashboardCssPath)) {
+    $dashboardCssVer .= '?v=' . (string) filemtime($dashboardCssPath);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -194,7 +258,7 @@ $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInf
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= htmlspecialchars(url_path('assets/css/dashboard.css')) ?>">
+    <link rel="stylesheet" href="<?= htmlspecialchars($dashboardCssVer) ?>">
 </head>
 <body class="dash-page">
 
@@ -363,10 +427,60 @@ $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInf
     <section class="dash-panel">
         <div class="dash-panel-head">
             <h2>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Busca de notas fiscais
+            </h2>
+            <?php if ($filtroAtivo): ?>
+                <span class="dash-badge dash-badge--consulta"><?= number_format($totalNotasFiltradas, 0, ',', '.') ?> encontrada(s)</span>
+            <?php else: ?>
+                <span class="subtitle">Filtre por período de emissão e fornecedor</span>
+            <?php endif; ?>
+        </div>
+        <div class="dash-panel-body">
+            <form method="get" class="dash-busca-grid" action="">
+                <div class="dash-field">
+                    <label for="data_inicio">Emissão de</label>
+                    <input type="date" id="data_inicio" name="data_inicio"
+                           value="<?= htmlspecialchars($filtroDataInicioInput) ?>">
+                </div>
+                <span class="dash-busca-ate" aria-hidden="true">até</span>
+                <div class="dash-field">
+                    <label for="data_fim">Emissão até</label>
+                    <input type="date" id="data_fim" name="data_fim"
+                           value="<?= htmlspecialchars($filtroDataFimInput) ?>">
+                </div>
+                <div class="dash-field dash-busca-fornecedor">
+                    <label for="fornecedor">Fornecedor</label>
+                    <input type="text" id="fornecedor" name="fornecedor"
+                           value="<?= htmlspecialchars($filtroFornecedorInput) ?>"
+                           placeholder="Razão social do emitente">
+                </div>
+                <div class="dash-busca-actions">
+                    <button type="submit" class="dash-btn dash-btn-primary">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Buscar
+                    </button>
+                    <?php if ($filtroAtivo): ?>
+                    <a href="<?= htmlspecialchars(url_path('painel.php')) ?>" class="dash-btn dash-btn-outline">Limpar</a>
+                    <?php endif; ?>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="dash-panel">
+        <div class="dash-panel-head">
+            <h2>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                 Notas fiscais
             </h2>
-            <span class="subtitle"><?= count($notas) ?> exibidas · <?= number_format($totalNotas, 0, ',', '.') ?> no total</span>
+            <span class="subtitle">
+                <?php if ($filtroAtivo): ?>
+                    <?= count($notas) ?> exibidas · <?= number_format($totalNotasFiltradas, 0, ',', '.') ?> encontrada(s) · <?= number_format($totalNotas, 0, ',', '.') ?> no total
+                <?php else: ?>
+                    <?= count($notas) ?> exibidas · <?= number_format($totalNotas, 0, ',', '.') ?> no total
+                <?php endif; ?>
+            </span>
         </div>
         <div class="dash-panel-body dash-panel-body--flush">
             <?php if ($notas): ?>
@@ -421,7 +535,12 @@ $avisoConsulta = painel_aviso_consulta_bloqueada($consultaPermitida, $licencaInf
             <?php else: ?>
             <div class="dash-empty">
                 <div class="dash-empty-icon" aria-hidden="true">📭</div>
+                <?php if ($filtroAtivo): ?>
+                <p>Nenhuma nota encontrada com os filtros informados.<br>
+                    <a href="<?= htmlspecialchars(url_path('painel.php')) ?>">Limpar filtros</a> ou ajuste data/fornecedor.</p>
+                <?php else: ?>
                 <p>Nenhuma nota capturada ainda.<br>Use <strong>Consultar NSU agora</strong> ou aguarde o robô automático.</p>
+                <?php endif; ?>
             </div>
             <?php endif; ?>
         </div>
