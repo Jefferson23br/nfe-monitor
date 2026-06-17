@@ -20,7 +20,7 @@ try {
 
     echo "1. Verificando/Manifestando nota...\n";
     // Manifestamos. Se já foi feito, a SEFAZ só vai dar um aviso de duplicidade, não tem problema.
-    $tools->sefazManifesta($chave, '210210', 'Ciencia da Operacao', 1);
+    $tools->sefazManifesta($chave, 210210, 'Ciencia da Operacao', 1);
 
     echo "2. Buscando pacote de dados na SEFAZ...\n";
     $xmlResponse = $tools->sefazDistDFe(0, 0, $chave);

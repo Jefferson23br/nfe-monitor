@@ -641,7 +641,7 @@ function monitor_executar_consulta_consnsu(
                 $valor = $node->getElementsByTagName('vNF')->item(0)->nodeValue;
 
                 try {
-                    $tools->sefazManifesta($chave, '210210', 'Ciencia da Operacao', 1);
+                    $tools->sefazManifesta($chave, 210210, 'Ciencia da Operacao', 1);
                 } catch (\Exception $e) {
                 }
 
@@ -1052,7 +1052,7 @@ function monitor_baixar_xml_sefaz(int $empresaId, string $chave): array
         $tools->model(55);
 
         try {
-            $tools->sefazManifesta($chave, '210210', 'Ciencia da Operacao', 1);
+            $tools->sefazManifesta($chave, 210210, 'Ciencia da Operacao', 1);
         } catch (Throwable) {
         }
 
