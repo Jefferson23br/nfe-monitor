@@ -1,17 +1,19 @@
 #!/bin/bash
-# Consulta NSU automática a cada 3 horas
+# Consulta NSU automática a cada 3 horas — inicia robô contínuo em background
 # Crontab: 0 */3 * * * /root/nfe-monitor/scripts/cron-monitor.sh >> /var/log/nfe-monitor-cron.log 2>&1
 
 set -e
 cd "$(dirname "$0")/.." || exit 1
 
 export NFE_MONITOR_CRON=1
-PHP=/usr/bin/php8.3
 LOG_PREFIX="[$(date '+%Y-%m-%d %H:%M:%S')]"
+LAUNCH="$(dirname "$0")/cron-lancar-robo.sh"
 OPENSSL_LEGACY="$(dirname "$0")/../deploy/openssl-legacy.cnf"
 if [ -f "$OPENSSL_LEGACY" ]; then
     export OPENSSL_CONF="$OPENSSL_LEGACY"
 fi
+
+chmod +x "$LAUNCH" 2>/dev/null || true
 
 mapfile -t EMPRESA_IDS < <(sudo -u postgres psql -d nfe_monitor -t -A -c "SELECT id FROM empresas WHERE ativo = TRUE ORDER BY id")
 
@@ -28,7 +30,7 @@ for id in "${EMPRESA_IDS[@]}"; do
         continue
     fi
     echo "$LOG_PREFIX --- Empresa $id ---"
-    "$PHP" -d opcache.enable_cli=0 monitor.php --empresa="$id" --cron 2>&1 || true
+    "$LAUNCH" "$id" --forcar || true
 done
 
-echo "$LOG_PREFIX Fim — ${#EMPRESA_IDS[@]} empresa(s) processada(s)"
+echo "$LOG_PREFIX Fim — ${#EMPRESA_IDS[@]} empresa(s) enfileirada(s)"
