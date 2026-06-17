@@ -229,45 +229,59 @@ function monitor_cli_tem_flag(string $flag): bool
 
 const MONITOR_INTERVALO_HORAS = 3;
 
-/** SEFAZ bloqueia após 20 consultas em 60 min; manual trava aos 15 (margem para o cron). */
+/** SEFAZ bloqueia após 20 consultas em 60 min por CNPJ; robô e manual compartilham 18/h por empresa. */
 const MONITOR_SEFAZ_JANELA_MINUTOS = 60;
-const MONITOR_SEFAZ_LIMITE_MANUAL = 15;
+const MONITOR_SEFAZ_LIMITE_CONSULTAS = 18;
+const MONITOR_INTERVALO_ENTRE_CONSULTAS_SEG = 60;
 
-function monitor_contar_consultas_sefaz_periodo(int $minutos = MONITOR_SEFAZ_JANELA_MINUTOS): int
-{
+/** @deprecated use MONITOR_SEFAZ_LIMITE_CONSULTAS */
+const MONITOR_SEFAZ_LIMITE_MANUAL = MONITOR_SEFAZ_LIMITE_CONSULTAS;
+
+function monitor_contar_consultas_sefaz_periodo(
+    int $empresaId,
+    int $minutos = MONITOR_SEFAZ_JANELA_MINUTOS
+): int {
     monitor_garantir_schema();
     $minutos = max(1, $minutos);
     $stmt = db()->prepare(
         "SELECT COUNT(*) FROM registros_robot
-         WHERE UPPER(tipo) = 'CONSULTA'
+         WHERE empresa_id = :e
+         AND UPPER(tipo) = 'CONSULTA'
          AND criado_em >= NOW() - INTERVAL '1 minute' * :min"
     );
+    $stmt->bindValue(':e', $empresaId, PDO::PARAM_INT);
     $stmt->bindValue(':min', $minutos, PDO::PARAM_INT);
     $stmt->execute();
 
     return (int) $stmt->fetchColumn();
 }
 
-/** Minutos até a consulta manual ser liberada (quando a contagem global cair abaixo do limite). */
-function monitor_minutos_ate_liberar_consulta_manual(int $janelaMinutos = MONITOR_SEFAZ_JANELA_MINUTOS): int
-{
+/** Minutos até a consulta ser liberada para a empresa (quando a contagem cair abaixo do limite). */
+function monitor_minutos_ate_liberar_consulta_manual(
+    int $empresaId,
+    int $janelaMinutos = MONITOR_SEFAZ_JANELA_MINUTOS
+): int {
     monitor_garantir_schema();
-    $limite = MONITOR_SEFAZ_LIMITE_MANUAL;
-    $contagem = monitor_contar_consultas_sefaz_periodo($janelaMinutos);
+    $limite = MONITOR_SEFAZ_LIMITE_CONSULTAS;
+    $contagem = monitor_contar_consultas_sefaz_periodo($empresaId, $janelaMinutos);
     if ($contagem < $limite) {
         return 0;
     }
 
     $precisaSair = $contagem - $limite + 1;
-    $offset = max(0, $precisaSair - 1);
+    $offset = max(0, (int) $precisaSair - 1);
     $janela = (int) $janelaMinutos;
-    $stmt = db()->query(
+    $stmt = db()->prepare(
         "SELECT criado_em FROM registros_robot
-         WHERE UPPER(tipo) = 'CONSULTA'
-         AND criado_em >= NOW() - INTERVAL '1 minute' * {$janela}
+         WHERE empresa_id = :e
+         AND UPPER(tipo) = 'CONSULTA'
+         AND criado_em >= NOW() - INTERVAL '1 minute' * :janela
          ORDER BY criado_em ASC
          LIMIT 1 OFFSET {$offset}"
     );
+    $stmt->bindValue(':e', $empresaId, PDO::PARAM_INT);
+    $stmt->bindValue(':janela', $janela, PDO::PARAM_INT);
+    $stmt->execute();
     $criadoEm = $stmt->fetchColumn();
     if ($criadoEm === false) {
         return $janelaMinutos;
@@ -282,7 +296,7 @@ function monitor_minutos_ate_liberar_consulta_manual(int $janelaMinutos = MONITO
 }
 
 /**
- * Limite global de consultas manuais (todas as empresas somadas na janela SEFAZ).
+ * Limite de consultas SEFAZ por empresa (automático + manual na janela de 60 min).
  *
  * @return array{
  *   ok: bool,
@@ -292,11 +306,11 @@ function monitor_minutos_ate_liberar_consulta_manual(int $janelaMinutos = MONITO
  *   mensagem?: string
  * }
  */
-function monitor_limite_manual_sefaz(): array
+function monitor_limite_sefaz_consultas(int $empresaId): array
 {
-    $limite = MONITOR_SEFAZ_LIMITE_MANUAL;
+    $limite = MONITOR_SEFAZ_LIMITE_CONSULTAS;
     $janela = MONITOR_SEFAZ_JANELA_MINUTOS;
-    $contagem = monitor_contar_consultas_sefaz_periodo($janela);
+    $contagem = monitor_contar_consultas_sefaz_periodo($empresaId, $janela);
 
     if ($contagem < $limite) {
         return [
@@ -307,7 +321,7 @@ function monitor_limite_manual_sefaz(): array
         ];
     }
 
-    $minutosRestantes = monitor_minutos_ate_liberar_consulta_manual($janela);
+    $minutosRestantes = monitor_minutos_ate_liberar_consulta_manual($empresaId, $janela);
 
     return [
         'ok' => false,
@@ -315,14 +329,32 @@ function monitor_limite_manual_sefaz(): array
         'limite' => $limite,
         'minutos_restantes' => $minutosRestantes,
         'mensagem' => sprintf(
-            'Limite de consultas manuais atingido (%d/%d em %d min, todas as empresas). '
-            . 'A SEFAZ bloqueia após 20 consultas em 1 hora — aguarde ~%d min ou deixe o robô automático.',
+            'Limite de consultas atingido (%d/%d em %d min, esta empresa). '
+            . 'Aguarde ~%d min para nova consulta manual ou lote automático.',
             $contagem,
             $limite,
             $janela,
             $minutosRestantes
         ),
     ];
+}
+
+/** @deprecated use monitor_limite_sefaz_consultas($empresaId) */
+function monitor_limite_manual_sefaz(int $empresaId): array
+{
+    return monitor_limite_sefaz_consultas($empresaId);
+}
+
+/** Aguarda a janela SEFAZ liberar após atingir o limite de consultas/hora da empresa. */
+function monitor_aguardar_liberacao_sefaz(int $empresaId): void
+{
+    $minutos = monitor_minutos_ate_liberar_consulta_manual($empresaId);
+    if ($minutos <= 0) {
+        $minutos = MONITOR_SEFAZ_JANELA_MINUTOS;
+    }
+    echo "⏳ Limite de " . MONITOR_SEFAZ_LIMITE_CONSULTAS . " consultas/hora (empresa $empresaId) atingido. "
+        . "Aguardando {$minutos} min...\n";
+    sleep($minutos * 60);
 }
 
 function monitor_garantir_timezone(): void
@@ -420,6 +452,202 @@ function monitor_marcar_consulta_realizada(int $empresaId): void
     monitor_config_salvar($empresaId, 'ultima_consulta_at', date('Y-m-d H:i:s'));
 }
 
+/**
+ * Executa uma consulta consNSU (último NSU + 1) e processa a resposta da SEFAZ.
+ *
+ * @return array{
+ *   cStat: string,
+ *   xMotivo: string,
+ *   ultimo_nsu: string,
+ *   nsu_consultado: string,
+ *   encerrar: bool,
+ *   mensagem_saida: string
+ * }
+ */
+function monitor_executar_consulta_consnsu(
+    int $empresaId,
+    \NFePHP\NFe\Tools $tools,
+    PDO $pdo,
+    array $empresa,
+    bool $modoContinuo = false
+): array {
+    $sufixoContinuo = $modoContinuo ? ' Continuando...' : '';
+    $stmt = $pdo->prepare("SELECT valor FROM config_monitor WHERE empresa_id = :e AND campo = 'ultimo_nsu'");
+    $stmt->execute(['e' => $empresaId]);
+    $ultimoNSU = monitor_nsu_pad($stmt->fetchColumn() ?: '0');
+    $ultimoNSUInt = (int) $ultimoNSU;
+    $proximoNSUInt = $ultimoNSUInt + 1;
+    $proximoNSU = monitor_nsu_pad($proximoNSUInt);
+
+    echo "🏢 {$empresa['nome_fantasia']} (id=$empresaId)\n";
+    echo "📌 Último NSU gravado: $ultimoNSU\n";
+    echo "🔍 Consulta consNSU direta: $proximoNSU (+1)\n";
+
+    $xml = $tools->sefazDistDFe(0, $proximoNSUInt);
+
+    monitor_marcar_consulta_realizada($empresaId);
+
+    $dom = new DOMDocument();
+    $dom->loadXML($xml);
+
+    $cStat = monitor_xml_tag($dom, 'cStat') ?? '';
+    $xMotivo = monitor_xml_tag($dom, 'xMotivo') ?? '';
+
+    monitor_registrar_log(
+        $empresaId,
+        'CONSULTA',
+        "consNSU $proximoNSU: [$cStat] $xMotivo",
+        $ultimoNSU
+    );
+
+    monitor_salvar_status($empresaId, [
+        'empresa_id' => $empresaId,
+        'ultima_consulta' => time(),
+        'cStat' => $cStat,
+        'ultimo_nsu_gravado' => $ultimoNSU,
+        'nsu_consultado' => $proximoNSU,
+    ]);
+
+    if ($cStat === '656') {
+        return [
+            'cStat' => $cStat,
+            'xMotivo' => $xMotivo,
+            'ultimo_nsu' => $ultimoNSU,
+            'nsu_consultado' => $proximoNSU,
+            'encerrar' => true,
+            'mensagem_saida' => "🚨 Erro 656: consumo indevido.\n",
+        ];
+    }
+
+    if ($cStat === '589') {
+        return [
+            'cStat' => $cStat,
+            'xMotivo' => $xMotivo,
+            'ultimo_nsu' => $ultimoNSU,
+            'nsu_consultado' => $proximoNSU,
+            'encerrar' => true,
+            'mensagem_saida' => "✅ Sincronizado com SEFAZ. NSU gravado permanece $ultimoNSU.\n"
+                . "[$cStat] $xMotivo\n",
+        ];
+    }
+
+    if ($cStat === '137') {
+        monitor_atualizar_ultimo_nsu($empresaId, $proximoNSU);
+        $stmtNsu = $pdo->prepare("SELECT valor FROM config_monitor WHERE empresa_id = :e AND campo = 'ultimo_nsu'");
+        $stmtNsu->execute(['e' => $empresaId]);
+        $novoUltimo = monitor_nsu_pad($stmtNsu->fetchColumn() ?: '0');
+
+        return [
+            'cStat' => $cStat,
+            'xMotivo' => $xMotivo,
+            'ultimo_nsu' => $novoUltimo,
+            'nsu_consultado' => $proximoNSU,
+            'encerrar' => false,
+            'mensagem_saida' => "ℹ️ [$cStat] $xMotivo — NSU avançado para $novoUltimo.$sufixoContinuo\n",
+        ];
+    }
+
+    if ($cStat === '138') {
+        $lote = $dom->getElementsByTagName('docZip');
+        $qtd = $lote->length;
+        echo "📦 Itens no lote: $qtd\n";
+
+        foreach ($lote as $item) {
+            $nsuEncontrado = $item->getAttribute('NSU');
+            $gz = gzdecode(base64_decode($item->nodeValue));
+            $domDoc = new DOMDocument();
+            $domDoc->loadXML($gz);
+
+            if ($domDoc->getElementsByTagName('resNFe')->length > 0) {
+                $node = $domDoc->getElementsByTagName('resNFe')->item(0);
+                $chave = $node->getElementsByTagName('chNFe')->item(0)->nodeValue;
+                $nome  = $node->getElementsByTagName('xNome')->item(0)->nodeValue;
+                $valor = $node->getElementsByTagName('vNF')->item(0)->nodeValue;
+
+                try {
+                    $tools->sefazManifesta($chave, '210210', 'Ciencia da Operacao', 1);
+                } catch (\Exception $e) {
+                }
+
+                $pdo->prepare(
+                    'INSERT INTO notas_fiscais (empresa_id, chnfe, cnpj_emitente, nome_emitente, valor_nota, data_emissao, nsu) 
+                     VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT (empresa_id, chnfe) DO NOTHING'
+                )->execute([
+                    $empresaId,
+                    $chave,
+                    $node->getElementsByTagName('CNPJ')->item(0)->nodeValue
+                        ?? $node->getElementsByTagName('CPF')->item(0)->nodeValue,
+                    $nome,
+                    $valor,
+                    substr($node->getElementsByTagName('dhEmi')->item(0)->nodeValue, 0, 19),
+                    monitor_nsu_pad($nsuEncontrado),
+                ]);
+
+                monitor_registrar_log($empresaId, 'SUCESSO', "Nota R$ $valor salva.", $nsuEncontrado);
+            } else {
+                monitor_registrar_log($empresaId, 'INFO', 'Evento/documento sem resNFe.', $nsuEncontrado);
+            }
+
+            monitor_atualizar_ultimo_nsu($empresaId, $nsuEncontrado);
+        }
+
+        $stmtNsu = $pdo->prepare("SELECT valor FROM config_monitor WHERE empresa_id = :e AND campo = 'ultimo_nsu'");
+        $stmtNsu->execute(['e' => $empresaId]);
+        $novoUltimo = monitor_nsu_pad($stmtNsu->fetchColumn() ?: '0');
+
+        return [
+            'cStat' => $cStat,
+            'xMotivo' => $xMotivo,
+            'ultimo_nsu' => $novoUltimo,
+            'nsu_consultado' => $proximoNSU,
+            'encerrar' => false,
+            'mensagem_saida' => "✅ Processado. Último NSU gravado: $novoUltimo.$sufixoContinuo\n",
+        ];
+    }
+
+    return [
+        'cStat' => $cStat,
+        'xMotivo' => $xMotivo,
+        'ultimo_nsu' => $ultimoNSU,
+        'nsu_consultado' => $proximoNSU,
+        'encerrar' => false,
+        'mensagem_saida' => "ℹ️ Consulta registrada. NSU gravado: $ultimoNSU. [$cStat] $xMotivo$sufixoContinuo\n",
+    ];
+}
+
+/**
+ * Ciclo contínuo do cron: consulta a cada 1 min até [589] ou limite de 18/h (aguarda 60 min e retoma).
+ */
+function monitor_ciclo_consultas_continuo(int $empresaId, \NFePHP\NFe\Tools $tools, PDO $pdo, array $empresa): void
+{
+    echo '🔄 Modo contínuo: máx ' . MONITOR_SEFAZ_LIMITE_CONSULTAS . ' consultas/hora, '
+        . 'intervalo ' . MONITOR_INTERVALO_ENTRE_CONSULTAS_SEG . " s, para apenas em [589].\n";
+
+    while (true) {
+        $limite = monitor_limite_sefaz_consultas($empresaId);
+        if (!$limite['ok']) {
+            monitor_aguardar_liberacao_sefaz($empresaId);
+            continue;
+        }
+
+        $resultado = monitor_executar_consulta_consnsu($empresaId, $tools, $pdo, $empresa, true);
+        echo $resultado['mensagem_saida'];
+
+        if ($resultado['encerrar']) {
+            return;
+        }
+
+        $limite = monitor_limite_sefaz_consultas($empresaId);
+        if (!$limite['ok']) {
+            monitor_aguardar_liberacao_sefaz($empresaId);
+            continue;
+        }
+
+        echo '⏱️ Próxima consulta em ' . MONITOR_INTERVALO_ENTRE_CONSULTAS_SEG . " segundos...\n";
+        sleep(MONITOR_INTERVALO_ENTRE_CONSULTAS_SEG);
+    }
+}
+
 /** Histórico de consultas NSU / atividade do robô */
 function monitor_logs_listar(int $empresaId, int $limite = 100): array
 {
@@ -500,9 +728,9 @@ function monitor_executar(int $empresaId, bool $force = false): string
     }
 
     if ($force) {
-        $limiteManual = monitor_limite_manual_sefaz();
+        $limiteManual = monitor_limite_sefaz_consultas($empresaId);
         if (!$limiteManual['ok']) {
-            return 'ERRO: ' . ($limiteManual['mensagem'] ?? 'Consulta manual bloqueada pelo limite SEFAZ.');
+            return 'ERRO: ' . ($limiteManual['mensagem'] ?? 'Consulta bloqueada pelo limite SEFAZ.');
         }
     }
 
