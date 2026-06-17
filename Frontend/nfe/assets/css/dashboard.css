@@ -658,7 +658,9 @@ body.dash-page {
 }
 
 .dash-field input[type="file"],
-.dash-field input[type="password"] {
+.dash-field input[type="password"],
+.dash-field input[type="text"],
+.dash-field input[type="date"] {
     width: 100%;
     padding: 0.5rem 0.75rem;
     border: 1px solid var(--dash-border);
@@ -673,6 +675,67 @@ body.dash-page {
     outline: none;
     border-color: var(--dash-accent);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ---- Busca de notas ---- */
+.dash-busca-grid {
+    display: grid;
+    grid-template-columns: minmax(9.5rem, 10.75rem) 2rem minmax(9.5rem, 10.75rem) minmax(12rem, 1fr) auto;
+    gap: 0.75rem;
+    align-items: end;
+    width: 100%;
+}
+
+.dash-busca-grid .dash-field input[type="date"] {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+    font-size: 0.75rem;
+}
+
+.dash-busca-fornecedor {
+    min-width: 0;
+}
+
+.dash-busca-ate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: end;
+    height: 2.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--dash-muted);
+    user-select: none;
+}
+
+.dash-busca-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.dash-busca-actions .dash-btn {
+    height: 2.375rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+    .dash-busca-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dash-busca-ate {
+        display: none;
+    }
+
+    .dash-busca-fornecedor,
+    .dash-busca-actions {
+        grid-column: 1 / -1;
+    }
+
+    .dash-busca-actions {
+        justify-content: flex-start;
+    }
 }
 
 .dash-btn-danger {
